@@ -51,7 +51,7 @@ public class User {
 	// 무한참조가 일어나는 시점: 잭슨이 발동될 때 
 	// 테이블 생성 시에는 관계 없고, SELECT할 때만 관계 있음 
 	// 나는 연관관계의 주인이 아니야!(나는 F.K를 가진 아이가 아니야) -> DB의 필드를 만들지 않는다
-	@JsonIgnoreProperties({"user"}) // 무시하고 싶은(무한참조를 막고 싶은) 변수명 ( -> 무한참조 막기) 
-	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER) // POST 오브젝트의 user 변수를 넣어줌
+	@JsonIgnoreProperties({"user", "content"}) // 무시하고 싶은(무한참조를 막고 싶은) 변수명 ( -> 무한참조 막기) 
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY) // POST 오브젝트의 user 변수를 넣어줌
 	private List<Post> posts; // 오브젝트면 조인해서 무조건 들고 오고 컬렉션이면 안들고 옴 
 }

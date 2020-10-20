@@ -2,7 +2,7 @@ package com.cos.post.web;
 /*
  * 2020.10.20-6
  * 선행: PostRepository.java
- * 후행: 
+ * 후행: Comment.java 
  */
 
 import java.util.List;
