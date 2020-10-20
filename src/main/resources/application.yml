@@ -12,6 +12,7 @@ spring:
     password: BITC5600
     
   jpa:
+    open-in-view: true #뷰까지 세션을 오픈하겠다 디폴트값이 true, false면 <fetch = FetchType.LAZY> 시 문제 발생 
     hibernate:
       ddl-auto: update
       naming:

@@ -41,7 +41,7 @@ public class Post {
 	private int readCount;
 	
 	// User를 통해서 post를 호출할때만 무시됨 
-	@JoinColumn(name="userId") // 필드 이름 지정
+	@JoinColumn(name="userId") // 필드 이름 지정 // fetch = FetchType.EAGER
 	@ManyToOne // DB에 user_id 필드 생성됨
 	private User user; // 컬렉션이면 안들고 옴 오브젝트면 조인해서 무조건 들고 오고  
 	
